@@ -6,7 +6,7 @@ import store from './store'
 // ---------------------
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
-// import './css/style.css'
+import './css/style.css'
 
 Vue.use(VueMaterial)
 

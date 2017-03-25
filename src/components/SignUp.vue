@@ -1,7 +1,7 @@
 <template>
-  <div class="sign-in">
+  <div class="sign-up" >
     <md-list class="md-double-line">
-      <center><md-header class="md-display-4">Monster Clicker</md-header></center>
+      <center><md-header class="md-display-2">Sign Up</md-header></center>
         <md-list-item>
           <md-avatar class="md-avatar-icon">
             <md-icon>person</md-icon>
@@ -26,8 +26,8 @@
         </md-list-item>
       <md-list-item>
         <span style="flex: 1"></span>
-        <md-button class="md-raised md-primary" @click.native="login">Login</md-button>
-        <md-button class="md-raised md-primary" @click.native="signup">SignUp</md-button>
+        <md-button class="md-raised md-primary" @click.native="submit">Submit</md-button>
+        <md-button class="md-raised md-primary" @click.native="cancel">Cancel</md-button>
         <span style="flex: 1"></span>
       </md-list-item>
     </md-list>
@@ -47,16 +47,15 @@ export default {
     }
   },
   methods: {
-    login () {
-      console.log('methods.login')
+    submit () {
+      // console.log('methods.login')
       UsersApi.login(this.email, this.password, function (_response) {
         // NOTE: Posts.index is not yet implemented
         router.push({ name: 'Posts.index' })
       })
     },
-    signup () {
-      console.log('sign up')
-      router.push({ name: 'Users.sign_up' })
+    cancel () {
+      router.push({ name: 'Users.sign_in' })
     }
   }
 }

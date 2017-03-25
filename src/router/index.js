@@ -4,6 +4,7 @@ import SignIn from '@/components/SignIn'
 import Hello from '@/components/Hello'
 import PostsIndex from '@/components/posts/Index.vue'
 import Leaderboard from '@/components/Leaderboard.vue'
+import SignUp from '@/components/SignUp'
 
 Vue.use(Router)
 
@@ -32,6 +33,11 @@ export default new Router({
       path: '/leaderboard',
       name: 'Leaderboard',
       component: Leaderboard
+    },
+    {
+      path: '/sign_up',
+      name: 'Users.sign_up',
+      component: SignUp
     }
   ]
 })

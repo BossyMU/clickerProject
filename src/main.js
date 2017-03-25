@@ -1,16 +1,22 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
+
 // ---------------------
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
-import './css/style.css'
+// import './css/style.css'
 
 Vue.use(VueMaterial)
 
 import Axios from 'axios'
 Vue.$http = Axios
 // ---------------------
+// add
+Axios.defaults.baseURL = 'https://iccs340-vue-api-auth.herokuapp.com/'
+Axios.defaults.headers.common.Accept = 'application/json'
+Axios.defaults.withCredentials = true
 
 Vue.config.productionTip = false
 
@@ -21,6 +27,7 @@ new Vue({
     counter: 0
   },
   router,
+  store,
   template: '<App/>',
   components: { App }
 })

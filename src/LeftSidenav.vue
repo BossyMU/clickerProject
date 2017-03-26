@@ -22,7 +22,7 @@
 			  </md-list>
 		  </md-tab>
 
-		  <md-tab id="achievement" md-label="Achievement" md-icon="star">
+		  <md-tab md-fixed id="achievement" md-label="Achievement" md-icon="star">
 		    <p> Achievement tab.</p>
           <md-list-item>Start The Game
             <md-icon>star</md-icon>
@@ -34,14 +34,21 @@
             <md-icon>star_border</md-icon>
           </md-list-item>
 		  </md-tab>
-
-		  <md-tab id="status" md-label="Status" md-icon="favorite">
+      <md-tab md-fixed md-label="Status" md-icon="favorite">
+      <h3> Status tab.</h3>
+       <p> Name: John </p>
+        <p> Damage: 0 </p>
+        <p> Upgraded time: 0</p>
+        <p> Used Magic: 0 </p>
+      <p>sfs</p>
+    </md-tab>
+<!-- 		  <md-tab md-fixed id="status" md-label="Status" md-icon="favorite">
 		    <h3> Status tab.</h3>
         <p> Name: John </p>
         <p> Damage: 0 </p>
         <p> Upgraded time: 0</p>
         <p> Used Magic: 0 </p>
-		  </md-tab>
+		  </md-tab> -->
 		</md-tabs>
     </md-sidenav>
   </div>

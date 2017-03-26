@@ -38,5 +38,18 @@ export default {
     .catch(function (response) {
       store.dispatch('logout')
     })
+  },
+  getLeaderboards (callback) {
+    Vue.$.get('/users/leaderboards.json')
+    console.log('in')
+
+    .then(function (response) {
+      console.log('go')
+      callback(response.data)
+      // console.log(response.data)
+    })
+    .catch(function (response) {
+      console.log('kuy')
+    })
   }
 }

@@ -12,7 +12,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: SignIn
+      // component: SignIn
+      component: Leaderboard
     },
     {
       path: '/sign_in',

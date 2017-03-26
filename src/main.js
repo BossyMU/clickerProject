@@ -14,9 +14,9 @@ import Axios from 'axios'
 Vue.$http = Axios
 // ---------------------
 // add
-Axios.defaults.baseURL = 'https://iccs340-vue-api-auth.herokuapp.com/'
+Axios.defaults.baseURL = 'localhost:8080/'
 Axios.defaults.headers.common.Accept = 'application/json'
-Axios.defaults.withCredentials = true
+Axios.defaults.withCredentials = false
 
 Vue.config.productionTip = false
 

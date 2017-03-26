@@ -29,6 +29,7 @@
 		    </md-table-row>
 		  </md-table-body>
 		</md-table>
+    <md-button class="md-raised md-primary" @click.native="getLeaderboards">get</md-button>
 	</div>
 </template>
 
@@ -67,3 +68,26 @@
     }
   }
 }); -->
+<script>
+import UsersApi from '../api/users.js'
+
+export default {
+  name: 'sign-in',
+  data () {
+    return {
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    getLeaderboards () {
+      console.log('leaderboard55555555555')
+      UsersApi.getLeaderboards()
+    }
+  }
+}
+</script>
+
+<style scoped>
+</style>  
+

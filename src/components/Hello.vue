@@ -57,7 +57,7 @@ export default {
     }
   },
   components: {
-    Iccs340LeftSidenav: require('../LeftSidenav')
+    Iccs340LeftSidenav: require('./LeftSidenav2')
   }
 }
 </script>

@@ -82,6 +82,7 @@
 </template>
 
 <script>
+import store from './store'
 
 export default {
   methods: {
@@ -90,8 +91,7 @@ export default {
     },
     buyWeapon () {
       console.log('BUY')
-      gold.state.gold -= 10
-      this.gold -= 10
+      store.state.gold -= 10
     }
   }
 }

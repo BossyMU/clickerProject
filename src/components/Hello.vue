@@ -52,7 +52,7 @@ export default {
       } else {
         this.counter = 1
         store.state.gold += 10
-        this.gold += 10
+        this.gold = store.state.gold
       }
     }
   },

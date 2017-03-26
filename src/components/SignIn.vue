@@ -1,7 +1,7 @@
 <template>
   <div class="sign-in">
     <md-list class="md-double-line">
-      <center><md-header class="md-display-4">Monster Clicker</md-header></center>
+      <center><span class="md-display-4">Monster Clicker</span></center>
         <md-list-item>
           <md-avatar class="md-avatar-icon">
             <md-icon>person</md-icon>

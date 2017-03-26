@@ -95,8 +95,9 @@ export default {
     },
     buyWeapon () {
       console.log('BUY')
+      gold.state.gold -= 10
       this.gold -= 10
-    },
+    }
     logout () {
       UsersApi.logout(this.email, this.password, function (_response) {
         // NOTE: Posts.index is not yet implemented

@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-     <iccs340-left-sidenav></iccs340-left-sidenav>
+  <iccs340-left-sidenav></iccs340-left-sidenav>
     <md-layout md-align="center" md-gutter="16">
   <md-layout md-flex="50">
     <h1>Your Gold {{ gold }}</h1>

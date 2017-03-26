@@ -3,8 +3,8 @@
 		<md-table md-sort="calories">
 		  <md-table-header>
 		    <md-table-row>
-		      <md-table-head md-sort-by="dessert">User</md-table-head>
-		      <md-table-head md-sort-by="calories" md-numeric md-tooltip="The total amount of food energy and the given serving size">High-Score</md-table-head>
+		      <md-table-head md-sort-by="User">User</md-table-head>
+		      <md-table-head md-sort-by="High-Score" md-numeric >High-Score</md-table-head>
 		    </md-table-row>
 		  </md-table-header>
 

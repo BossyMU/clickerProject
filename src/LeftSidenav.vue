@@ -19,9 +19,36 @@
 		  <md-tab id="upgrade" md-label="Upgrade" md-icon="trending_up">
 		    <p> Upgrade tab.</p>
 		    <md-list>
-		     	<md-button v-on:click="buyWeapon">Weapon</md-button>
-          <md-button>Add Helper</md-button>
-          <md-button>Magic</md-button>
+		     	<!-- <md-button v-on:click="buyWeapon">Weapon</md-button> -->
+          <md-list-item>
+          <span>Weapon</span>
+          <md-list-expand>
+              <md-list v-for="(col, index) in 5" :key="index">
+                <md-button v-on:click="buyWeapon">Weapon</md-button>
+              </md-list>
+            </md-list-expand>
+          </md-list-item>
+
+
+          <!-- <md-button>Add Helper</md-button> -->
+          <md-list-item>
+          <span>Add Helper</span>
+          <md-list-expand>
+              <md-list v-for="(col, index) in 5" :key="index">
+                <md-button v-on:click="" class="md-inset">World</md-button>
+              </md-list>
+            </md-list-expand>
+          </md-list-item>
+
+          <!-- <md-button>Magic</md-button> -->
+          <md-list-item>
+          <span>Magic</span>
+          <md-list-expand>
+              <md-list v-for="(col, index) in 5" :key="index">
+                <md-button v-on:click="" class="md-inset">World</md-button>
+              </md-list>
+            </md-list-expand>
+          </md-list-item>
 			  </md-list>
 		  </md-tab>
 
@@ -43,7 +70,7 @@
         <p> Damage: 0 </p>
         <p> Upgraded time: 0</p>
         <p> Used Magic: 0 </p>
-      <p>sfs</p>
+      <!-- <p>sfs</p> -->
     </md-tab>
 <!-- 		  <md-tab md-fixed id="status" md-label="Status" md-icon="favorite">
 		    <h3> Status tab.</h3>

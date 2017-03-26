@@ -13,7 +13,7 @@ export default new Router({
     {
       path: '/',
       // component: SignIn
-      component: Leaderboard
+      component: Hello
     },
     {
       path: '/sign_in',

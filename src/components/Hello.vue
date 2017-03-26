@@ -35,13 +35,14 @@
 </template>
 
 <script>
+import store from '@/store'
 export default {
   name: 'hello',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      counter: 100,
-      gold: 0
+      counter: 1,
+      gold: store.state.gold
     }
   },
   methods: {
@@ -49,7 +50,8 @@ export default {
       if (this.counter !== 0) {
         this.counter -= 1
       } else {
-        this.counter = 100
+        this.counter = 1
+        store.state.gold += 10
         this.gold += 10
       }
     }

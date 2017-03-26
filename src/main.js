@@ -14,9 +14,9 @@ import Axios from 'axios'
 Vue.$http = Axios
 // ---------------------
 // add
-Axios.defaults.baseURL = 'localhost:8080/'
+Axios.defaults.baseURL = 'http://localhost:8080'
 Axios.defaults.headers.common.Accept = 'application/json'
-Axios.defaults.withCredentials = false
+Axios.defaults.withCredentials = true
 
 Vue.config.productionTip = false
 

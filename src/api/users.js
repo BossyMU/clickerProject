@@ -40,13 +40,10 @@ export default {
     })
   },
   getLeaderboards (callback) {
-    Vue.$.get('/users/leaderboards.json')
-    console.log('in')
-
+    Vue.$http.get('/users/leaderboards')
     .then(function (response) {
-      console.log('go')
-      callback(response.data)
-      // console.log(response.data)
+      console.log(response.data.user)
+      callback(response.data.user)
     })
     .catch(function (response) {
       console.log('kuy')

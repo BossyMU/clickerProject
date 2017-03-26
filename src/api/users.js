@@ -42,11 +42,11 @@ export default {
   getLeaderboards (callback) {
     Vue.$http.get('/users/leaderboards')
     .then(function (response) {
-      console.log(response.data.user)
-      callback(response.data.user)
+      // console.log(response.data.user[0])
+      callback(response.data)
     })
     .catch(function (response) {
-      console.log('kuy')
+      // console.log('kuy')
     })
   }
 }

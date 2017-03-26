@@ -15,7 +15,6 @@
 		    </md-table-row>
 		  </md-table-body>
 		</md-table>
-    <md-button class="md-raised md-primary" @click.native="getLeaderboards">get</md-button>
 	</div>
 </template>
 

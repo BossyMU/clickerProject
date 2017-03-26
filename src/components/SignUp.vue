@@ -20,7 +20,7 @@
           <div class="md-list-text-container">
             <md-input-container>
               <label>Password</label>
-              <md-input v-model="password" placeholder="" type="password" @keyup.enter.native="login"></md-input>
+              <md-input v-model="password" placeholder="" type="password" @keyup.enter.native="signup"></md-input>
             </md-input-container>
           </div>
         </md-list-item>
@@ -39,7 +39,7 @@ import UsersApi from '../api/users.js'
 import router from '../router'
 
 export default {
-  name: 'sign-in',
+  name: 'sign-up',
   data () {
     return {
       email: '',
@@ -49,9 +49,10 @@ export default {
   methods: {
     submit () {
       // console.log('methods.login')
-      UsersApi.login(this.email, this.password, function (_response) {
+      UsersApi.signup(this.email, this.password, function (_response) {
         // NOTE: Posts.index is not yet implemented
-        router.push({ name: 'Posts.index' })
+        // router.push({ name: 'Posts.index' })
+        router.push({ name: 'Hello' })
       })
     },
     cancel () {
@@ -62,7 +63,7 @@ export default {
 </script>
 
 <style scoped>
-.sign-in{
+.sign-up{
   margin-top: 50px;
 }
 </style>

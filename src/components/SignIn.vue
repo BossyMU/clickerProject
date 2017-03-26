@@ -51,11 +51,10 @@ export default {
       console.log('methods.login')
       UsersApi.login(this.email, this.password, function (_response) {
         // NOTE: Posts.index is not yet implemented
-        router.push({ name: 'Posts.index' })
+        if (_response === true) router.push({ name: 'Hello' })
       })
     },
     signup () {
-      console.log('sign up')
       router.push({ name: 'Users.sign_up' })
     }
   }

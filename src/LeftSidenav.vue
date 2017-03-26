@@ -5,6 +5,9 @@
         <md-icon>menu</md-icon>
       </md-button>
       <h2 class="md-title">Monster Clicker</h2>
+      <md-button class="md-icon-button" @click.native="logout">
+        Bye
+      </md-button>
     </md-toolbar>
     <md-sidenav class="md-left" ref="leftSidenav">
       <md-toolbar>
@@ -55,6 +58,9 @@
 </template>
 
 <script>
+import UsersApi from './api/users.js'
+import router from './router'
+
 export default {
   methods: {
     toggleLeftSidenav () {
@@ -63,6 +69,12 @@ export default {
     buyWeapon () {
       console.log('BUY')
       this.gold -= 10
+    },
+    logout () {
+      UsersApi.logout(this.email, this.password, function (_response) {
+        // NOTE: Posts.index is not yet implemented
+        if (_response === true) router.push({ name: 'Users.sign_in' })
+      })
     }
   }
 }

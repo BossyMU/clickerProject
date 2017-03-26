@@ -1,14 +1,3 @@
-<!-- Vue.component('my-table-head', {
-  template: "<thead><tr><th>#</th><th>Camper Name</th><th v-on:click='clickRecent'><a href='#'>Points in the last 30 days</a></th><th v-on:click='clickAllTime'><a href='#'>All time points</a></th></tr></thead>",
-  methods: {
-    clickRecent() {
-      this.$emit('get-recent')
-    },
-    clickAllTime() {
-      this.$emit('get-all-time')
-    }
-  },
-}) -->
 <template>
 	<div class="leaderboard">
 		<md-table md-sort="calories">
@@ -33,41 +22,6 @@
 	</div>
 </template>
 
-<!-- Vue.component('my-rows', {
-
-  template: "<tr><td>{{index + 1}}</td><td><img :src='camper.img' /> {{ camper.username }}</td><td >{{ camper.recent }}</td><td >{{ camper.alltime }}</td></tr>",
-
-  props: ["camper", "index"],
-
-}) -->
-
-<!-- var app = new Vue({
-  el: '#app',
-  data: {
-    camperList: [],
-    allTime: 'https://fcctop100.herokuapp.com/api/fccusers/top/alltime',
-    recentTime: 'https://fcctop100.herokuapp.com/api/fccusers/top/recent'
-  },
-  mounted() {
-    this.getAllTime()
-  },
-  methods: {
-    getAllTime: function() {
-      var self = this
-      $.getJSON(this.allTime, function(result) {
-        self.camperList = result;
-        console.log('Now displaying: All Time');
-      });
-    },
-    getRecent: function() {
-      var self = this
-      $.getJSON(this.recentTime, function(result) {
-        self.camperList = result;
-        console.log('Now displaying: Recent Time');
-      });
-    }
-  }
-}); -->
 <script>
 import UsersApi from '../api/users.js'
 

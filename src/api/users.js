@@ -10,25 +10,38 @@ export default {
         password: password
       }
     }
-    Vue.$http.post('/users/api_sign_in.json', loginParams)
+    Vue.$http.post(`/users/login?email=${email}&password=${password}`, loginParams)
     .then(function (response) {
-      store.dispatch('login')
-      callback(response.data)
+      if (response.data.user === true) {
+        store.dispatch('login')
+      }
+      callback(response.data.user)
     })
     .catch(function (response) {
       store.dispatch('logout')
     })
   },
-  logout (callback) {
-    console.log(store)
-    Vue.$http.delete('/users/api_sign_out.json')
+  signup (email, password, callback) {
+    Vue.$http.post(`/users?email=${email}&password=${password}`)
     .then(function (response) {
-      store.dispatch('logout')
+      // store.dispatch('login')
       callback(response.data)
     })
     .catch(function (response) {
-      store.dispatch('logout')
+      // store.dispatch('logout')
     })
+  },
+  logout (callback) {
+    console.log(store)
+    store.dispatch('logout')
+    // Vue.$http.delete('/users/api_sign_out.json')
+    // .then(function (response) {
+    //   store.dispatch('logout')
+    //   callback(response.data)
+    // })
+    // .catch(function (response) {
+    //   store.dispatch('logout')
+    // })
   },
   checkLoggedIn () {
     Vue.$http.get('/users/check_signed_in.json')

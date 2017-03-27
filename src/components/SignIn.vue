@@ -48,10 +48,7 @@ export default {
   },
   methods: {
     login () {
-      console.log('methods.login')
       UsersApi.login(this.email, this.password, function (_response) {
-        // NOTE: Posts.index is not yet implemented
-        if (_response === true) router.push({ name: 'Hello' })
       })
     },
     signup () {

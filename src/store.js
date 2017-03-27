@@ -18,7 +18,7 @@ const mutations = {
   login (state) {
     console.log('mutations login')
     state.auth = true
-    router.push({ name: 'Posts.index' })
+    router.push({ name: 'Hello' })
   },
   logout (state) {
     console.log('mutations logout')

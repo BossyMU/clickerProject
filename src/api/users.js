@@ -3,19 +3,11 @@ import store from '../store'
 
 export default {
   login (email, password, callback) {
-    console.log(store)
-    var loginParams = {
-      user: {
-        email: email,
-        password: password
-      }
-    }
-    Vue.$http.post(`/users/login?email=${email}&password=${password}`, loginParams)
+    Vue.$http.post(`/users/login?email=${email}&password=${password}`)
     .then(function (response) {
       if (response.data.user === true) {
         store.dispatch('login')
       }
-      callback(response.data.user)
     })
     .catch(function (response) {
       store.dispatch('logout')

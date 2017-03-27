@@ -2,9 +2,9 @@ import Vue from 'vue'
 
 export default {
   getHelpers (callback, errCallback) {
-    Vue.$http.post('/helpers')
+    Vue.$http.get('/helpers')
     .then(function (response) {
-      callback(response.data.helpers)
+      callback(response.data)
     })
     .catch(function (response) {
       errCallback(response)

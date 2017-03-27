@@ -2,9 +2,9 @@ import Vue from 'vue'
 
 export default {
   getWeapons (callback, errCallback) {
-    Vue.$http.post('/weapons')
+    Vue.$http.get('/weapons')
     .then(function (response) {
-      callback(response.data.weapons)
+      callback(response.data)
     })
     .catch(function (response) {
       errCallback(response)

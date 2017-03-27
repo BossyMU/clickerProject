@@ -20,8 +20,8 @@
           <md-list-item>
           <span>Weapon</span>
           <md-list-expand>
-              <md-list v-for="(col, index) in 5" :key="index">
-                <md-button v-on:click="buyWeapon">Weapon</md-button>
+              <md-list v-for=" x in Weapon_posts.weapons">
+                <md-button v-on:click="buyWeapon">{{x.name}}</md-button>
               </md-list>
             </md-list-expand>
           </md-list-item>
@@ -31,8 +31,8 @@
           <md-list-item>
           <span>Add Helper</span>
           <md-list-expand>
-              <md-list v-for="(col, index) in 5" :key="index">
-                <md-button v-on:click="" class="md-inset">World</md-button>
+              <md-list v-for=" x in Helper_posts.helpers">
+                <md-button v-on:click="buyWeapon">{{x.name}}</md-button>
               </md-list>
             </md-list-expand>
           </md-list-item>
@@ -41,8 +41,8 @@
           <md-list-item>
           <span>Magic</span>
           <md-list-expand>
-              <md-list v-for="(col, index) in 5" :key="index">
-                <md-button v-on:click="" class="md-inset">World</md-button>
+              <md-list v-for=" x in Magic_posts.magics">
+                <md-button v-on:click="buyWeapon">{{x.name}}</md-button>
               </md-list>
             </md-list-expand>
           </md-list-item>
@@ -83,8 +83,23 @@
 
 <script>
 import store from '../store'
+import WeaponApi from '../api/weapons.js'
+import MagicApi from '../api/magics.js'
+import HelperApi from '../api/helpers.js'
 
 export default {
+  mounted: function () {
+    this.getWeapons()
+    this.getMagics()
+    this.getHelpers()
+  },
+  data () {
+    return {
+      Weapon_posts: '',
+      Helper_posts: '',
+      Magic_posts: ''
+    }
+  },
   methods: {
     toggleLeftSidenav () {
       this.$refs.leftSidenav.toggle()
@@ -92,10 +107,29 @@ export default {
     buyWeapon () {
       console.log('BUY')
       store.state.gold -= 10
+    },
+    getWeapons () {
+      WeaponApi.getWeapons(_posts => {
+        this.Weapon_posts = _posts
+        console.log(this.Weapon_posts)
+      })
+    },
+    getMagics () {
+      MagicApi.getMagics(_posts => {
+        this.Magic_posts = _posts
+        console.log(this.Magic_posts)
+      })
+    },
+    getHelpers () {
+      HelperApi.getHelpers(_posts => {
+        this.Helper_posts = _posts
+        console.log(this.Helper_posts)
+      })
     }
   }
 }
 </script>
 
+</script>
 <style lang="css">
 </style>

@@ -7,7 +7,9 @@ Vue.use(Vuex)
 // initial state of the app
 const state = {
   auth: false,
-  gold: 0
+  gold: 0,
+  sec: 30,
+  counter: 100
 }
 
 // mutations are operations that actually mutates the state.
